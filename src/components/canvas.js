@@ -36,7 +36,7 @@ export default function canvas() {
           scrollTrigger: {
             trigger: '.hero__sticky-wrapper',
             start: 'top top',
-            end: 'bottom top',
+            end: 'bottom center',
             scrub: true,
           },
           onUpdate: render,
