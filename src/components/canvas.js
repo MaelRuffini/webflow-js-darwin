@@ -15,7 +15,7 @@ export default function canvas() {
   resizeCanvas()
   window.addEventListener('resize', resizeCanvas)
 
-  const frameCount = 90
+  const frameCount = 180
   const currentFrame = (index) => `https://image-sequence-darwin.netlify.app/animation/${(index + 1).toString().padStart(4, '0')}.png`
 
   const images = []
