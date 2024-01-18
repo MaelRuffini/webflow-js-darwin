@@ -8,18 +8,21 @@ import home from './pages/home/home'
 import homeScroll from './pages/home/home-scroll'
 import about from './pages/about/about'
 import aboutScroll from './pages/about/about-scroll'
+import canvas from './components/canvas'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const lenis = new Lenis()
 
-lenis.on('scroll', ScrollTrigger.update)
+setTimeout(() => {
+  lenis.on('scroll', ScrollTrigger.update)
 
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000)
-})
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000)
+  })
 
-gsap.ticker.lagSmoothing(0)
+  gsap.ticker.lagSmoothing(0)
+}, 2500)
 
 const currentLink = () => {
   var links = document.querySelectorAll('a[href]')
@@ -66,6 +69,7 @@ const init = () => {
   if (isHome) {
     home()
     homeScroll()
+    canvas()
   }
 
   const isAbout = document.querySelector('body').classList.contains('body--about')
