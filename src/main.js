@@ -69,7 +69,6 @@ const init = () => {
   if (isHome) {
     home()
     homeScroll()
-    canvas()
   }
 
   const isAbout = document.querySelector('body').classList.contains('body--about')

@@ -15,24 +15,10 @@ export default function home() {
     (context) => {
       let { isDesktop, isMobile, reduceMotion } = context.conditions
 
-      // let heroTitle = new SplitText('.home-hero__title', { type: 'lines' })
-      // gsap.from(heroTitle.lines, {
-      //   opacity: 0,
-      //   y: '2rem',
-      //   duration: 1.2,
-      //   delay: 1.8,
-      //   ease: 'Quart.easeInOut',
-      //   stagger: 0.05,
-      // })
-
-      // gsap.from('.h6__hero', {
-      //   opacity: 0,
-      //   y: '2rem',
-      //   duration: 1.2,
-      //   delay: 1.8,
-      //   ease: 'Quart.easeInOut',
-      //   stagger: 0.05,
-      // })
+      const videos = document.querySelectorAll('video')
+      videos.forEach((video) => {
+        video.play()
+      })
     }
   )
 }
