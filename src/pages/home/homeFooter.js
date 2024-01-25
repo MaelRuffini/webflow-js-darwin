@@ -47,7 +47,6 @@ export default function homeFooter() {
           start: 'top bottom',
           end: 'bottom top',
           scrub: true,
-          markers: true,
         },
         onUpdate: render,
       })
