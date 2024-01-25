@@ -82,6 +82,7 @@ const init = () => {
 
   const isManifesto = document.querySelector('body').classList.contains('body--manifesto')
   if (isManifesto) {
+    homeFooter()
     let textTl = gsap
       .timeline({
         scrollTrigger: {
