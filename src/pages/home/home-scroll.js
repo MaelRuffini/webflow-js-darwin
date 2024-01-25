@@ -15,6 +15,31 @@ export default function homeScroll() {
     (context) => {
       let { isDesktop, isMobile, reduceMotion } = context.conditions
 
+      gsap.to('.home-hero__title', {
+        opacity: 0,
+        y: '-0.5rem',
+        duration: 0.3,
+        ease: 'Quart.easeInOut',
+        scrollTrigger: {
+          trigger: '.hero__sticky-wrapper',
+          start: '5% top',
+          toggleActions: 'play none none reverse',
+        },
+      })
+
+      gsap.to('.h6__hero', {
+        opacity: 0,
+        y: '-0.5rem',
+        duration: 0.3,
+        stagger: 0.05,
+        ease: 'Quart.easeInOut',
+        scrollTrigger: {
+          trigger: '.hero__sticky-wrapper',
+          start: '5% top',
+          toggleActions: 'play none none reverse',
+        },
+      })
+
       // Panel animations
       const cards = gsap.utils.toArray('.mission__bg-image')
 

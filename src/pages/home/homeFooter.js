@@ -3,7 +3,7 @@ import { SplitText } from 'gsap/all'
 
 gsap.registerPlugin(SplitText)
 
-export default function home() {
+export default function homeFooter() {
   let mm = gsap.matchMedia(),
     breakPoint = 479
 
@@ -15,7 +15,7 @@ export default function home() {
     (context) => {
       let { isDesktop, isMobile, reduceMotion } = context.conditions
 
-      const canvas = document.querySelector('.canvas')
+      const canvas = document.querySelector('.canvas--footer')
       const cntxt = canvas.getContext('2d')
 
       function resizeCanvas() {
@@ -26,8 +26,8 @@ export default function home() {
       window.addEventListener('resize', resizeCanvas)
       resizeCanvas()
 
-      const frameCount = 180
-      const currentFrame = (index) => `https://image-sequence-darwin.netlify.app/animation/${(index + 1).toString().padStart(4, '0')}.jpg`
+      const frameCount = 80
+      const currentFrame = (index) => `https://image-sequence-darwin.netlify.app/footer/${(index + 1).toString().padStart(4, '0')}.jpg`
 
       const images = []
       const airpods = { frame: 0 }
@@ -43,10 +43,11 @@ export default function home() {
         snap: 'frame',
         ease: 'none',
         scrollTrigger: {
-          trigger: '.hero__sticky-wrapper',
-          start: 'top top',
+          trigger: '.section--contact',
+          start: 'top bottom',
           end: 'bottom top',
           scrub: true,
+          markers: true,
         },
         onUpdate: render,
       })

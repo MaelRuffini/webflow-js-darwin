@@ -8,8 +8,8 @@ import home from './pages/home/home'
 import homeScroll from './pages/home/home-scroll'
 import about from './pages/about/about'
 import aboutScroll from './pages/about/about-scroll'
-import canvas from './components/canvas'
 import text from './components/text'
+import homeFooter from './pages/home/homeFooter'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -71,6 +71,7 @@ const init = () => {
     home()
     homeScroll()
     text()
+    homeFooter()
   }
 
   const isAbout = document.querySelector('body').classList.contains('body--about')
@@ -209,15 +210,6 @@ barba.init({
               duration: 0,
             })
             .to(
-              '.loader__mask',
-              {
-                borderWidth: '5rem',
-                duration: 1,
-                ease: 'Quart.easeInOut',
-              },
-              0
-            )
-            .to(
               '.loader__wrapper',
               {
                 backgroundColor: 'white',
@@ -245,15 +237,6 @@ barba.init({
               reinitializeWebflowIX2(data.next.html)
             },
           })
-          .to(
-            '.loader__mask',
-            {
-              borderWidth: '0rem',
-              duration: 1,
-              ease: 'Quart.easeInOut',
-            },
-            0
-          )
           .to(
             '.loader__wrapper',
             {
