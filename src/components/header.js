@@ -16,19 +16,19 @@ export default function header() {
       let { isDesktop, isMobile, reduceMotion } = context.conditions
 
       // Toggle header visibility
-      const header = document.querySelector('.navbar')
+      // const header = document.querySelector('.navbar')
 
-      Observer.create({
-        target: window,
-        type: 'scroll',
-        tolerance: 50,
-        onUp: function scrollUp() {
-          header.classList.remove('is--hidden')
-        },
-        onDown: function scrollDown() {
-          header.classList.add('is--hidden')
-        },
-      })
+      // Observer.create({
+      //   target: window,
+      //   type: 'scroll',
+      //   tolerance: 50,
+      //   onUp: function scrollUp() {
+      //     header.classList.remove('is--hidden')
+      //   },
+      //   onDown: function scrollDown() {
+      //     header.classList.add('is--hidden')
+      //   },
+      // })
     }
   )
 }
