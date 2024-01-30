@@ -103,7 +103,7 @@ let loadingTl = gsap
     loadingProgress,
     {
       value: 100,
-      duration: 1.7,
+      duration: 2,
       ease: 'Quart.easeInOut',
       onUpdate: function () {
         document.querySelector('.loader__percent').textContent = `${Math.round(loadingProgress.value)}%`
