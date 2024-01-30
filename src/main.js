@@ -91,7 +91,12 @@ const init = () => {
 let loadingProgress = { value: 0 }
 
 let loadingTl = gsap
-  .timeline({ paused: true })
+  .timeline({
+    paused: true,
+    defaults: {
+      delay: 1.2,
+    },
+  })
   .to('.loader__bar', {
     scaleX: 1,
     duration: 1.8,
