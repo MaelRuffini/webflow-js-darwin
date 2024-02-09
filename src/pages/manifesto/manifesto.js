@@ -21,33 +21,6 @@ export default function manifesto() {
         sessionStorage.setItem('loaded', 'true')
       }
 
-      let textTl = gsap
-        .timeline({
-          defaults: {
-            delay: delay,
-          },
-        })
-        .to(
-          '.tags__text',
-          {
-            yPercent: -115,
-            duration: 1.4,
-            ease: 'Quart.easeInOut',
-            stagger: 0.1,
-          },
-          0
-        )
-        .to(
-          '.tags__text--absolute',
-          {
-            yPercent: -140,
-            duration: 1.4,
-            ease: 'Quart.easeInOut',
-            stagger: 0.1,
-          },
-          0
-        )
-
       gsap.to('.green-box-parallax', {
         y: '-10rem',
         ease: 'none',

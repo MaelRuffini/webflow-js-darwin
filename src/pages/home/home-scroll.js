@@ -21,7 +21,7 @@ export default function homeScroll() {
         duration: 0.3,
         ease: 'Quart.easeInOut',
         scrollTrigger: {
-          trigger: '.hero__sticky-wrapper',
+          trigger: '.hero__wrapper',
           start: '5% top',
           toggleActions: 'play none none reverse',
         },
@@ -34,7 +34,7 @@ export default function homeScroll() {
         stagger: 0.05,
         ease: 'Quart.easeInOut',
         scrollTrigger: {
-          trigger: '.hero__sticky-wrapper',
+          trigger: '.hero__wrapper',
           start: '5% top',
           toggleActions: 'play none none reverse',
         },
@@ -119,19 +119,19 @@ export default function homeScroll() {
       })
 
       // Parallax
-      const team = gsap.utils.toArray('.wrapper__image-team')
-      team.forEach((i) => {
-        gsap.to(i.querySelector('.home-team__image'), {
-          yPercent: 30,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: i,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-        })
-      })
+      // const team = gsap.utils.toArray('.wrapper__image-team')
+      // team.forEach((i) => {
+      //   gsap.to(i.querySelector('.home-team__image'), {
+      //     yPercent: 30,
+      //     ease: 'none',
+      //     scrollTrigger: {
+      //       trigger: i,
+      //       start: 'top bottom',
+      //       end: 'bottom top',
+      //       scrub: true,
+      //     },
+      //   })
+      // })
     }
   )
 }

@@ -15,54 +15,59 @@ export default function home() {
     (context) => {
       let { isDesktop, isMobile, reduceMotion } = context.conditions
 
-      const canvas = document.querySelector('.canvas')
-      const cntxt = canvas.getContext('2d')
+      setTimeout(() => {
+        const video = document.querySelector('.hero__video')
+        video.play()
+      }, 3000)
 
-      function resizeCanvas() {
-        canvas.width = window.innerWidth
-        canvas.height = window.innerHeight
-      }
+      // const canvas = document.querySelector('.canvas')
+      // const cntxt = canvas.getContext('2d')
 
-      window.addEventListener('resize', resizeCanvas)
-      resizeCanvas()
+      // function resizeCanvas() {
+      //   canvas.width = window.innerWidth
+      //   canvas.height = window.innerHeight
+      // }
 
-      const frameCount = 180
-      const currentFrame = (index) => `https://image-sequence-darwin.netlify.app/animation/${(index + 1).toString().padStart(4, '0')}.jpg`
+      // window.addEventListener('resize', resizeCanvas)
+      // resizeCanvas()
 
-      const images = []
-      const airpods = { frame: 0 }
+      // const frameCount = 180
+      // const currentFrame = (index) => `https://image-sequence-darwin.netlify.app/animation/${(index + 1).toString().padStart(4, '0')}.jpg`
 
-      for (let i = 0; i < frameCount; i++) {
-        const img = new Image()
-        img.src = currentFrame(i)
-        images.push(img)
-      }
+      // const images = []
+      // const airpods = { frame: 0 }
 
-      gsap.to(airpods, {
-        frame: frameCount - 1,
-        snap: 'frame',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.hero__sticky-wrapper',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-        onUpdate: render,
-      })
+      // for (let i = 0; i < frameCount; i++) {
+      //   const img = new Image()
+      //   img.src = currentFrame(i)
+      //   images.push(img)
+      // }
 
-      images[0].onload = render
+      // gsap.to(airpods, {
+      //   frame: frameCount - 1,
+      //   snap: 'frame',
+      //   ease: 'none',
+      //   scrollTrigger: {
+      //     trigger: '.hero__sticky-wrapper',
+      //     start: 'top top',
+      //     end: 'bottom top',
+      //     scrub: true,
+      //   },
+      //   onUpdate: render,
+      // })
 
-      function render() {
-        cntxt.clearRect(0, 0, canvas.width, canvas.height)
+      // images[0].onload = render
 
-        const img = images[airpods.frame]
-        const scale = Math.max(canvas.width / img.width, canvas.height / img.height)
-        const x = canvas.width / 2 - (img.width / 2) * scale
-        const y = canvas.height / 2 - (img.height / 2) * scale
+      // function render() {
+      //   cntxt.clearRect(0, 0, canvas.width, canvas.height)
 
-        cntxt.drawImage(img, x, y, img.width * scale, img.height * scale)
-      }
+      //   const img = images[airpods.frame]
+      //   const scale = Math.max(canvas.width / img.width, canvas.height / img.height)
+      //   const x = canvas.width / 2 - (img.width / 2) * scale
+      //   const y = canvas.height / 2 - (img.height / 2) * scale
+
+      //   cntxt.drawImage(img, x, y, img.width * scale, img.height * scale)
+      // }
     }
   )
 }
