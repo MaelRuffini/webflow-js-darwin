@@ -30,21 +30,6 @@ export default function aboutScroll() {
           invalidateOnRefresh: true,
         })
       })
-
-      // Parallax
-      const team = gsap.utils.toArray('.wrapper__image-team')
-      team.forEach((i) => {
-        gsap.to(i.querySelector('.home-team__image'), {
-          yPercent: 30,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: i,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-        })
-      })
     }
   )
 }
