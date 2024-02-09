@@ -15,6 +15,48 @@ export default function header() {
     (context) => {
       let { isDesktop, isMobile, reduceMotion } = context.conditions
 
+      const buttons = document.querySelectorAll('.button__wrapper')
+      if (buttons) {
+        buttons.forEach((button) => {
+          let btnTl = gsap
+            .timeline({ paused: true })
+            .to(
+              button.querySelector('.button__background'),
+              {
+                scaleY: 1,
+                duration: 1.2,
+                ease: 'Quart.easeInOut',
+              },
+              0
+            )
+            .to(
+              button.querySelector('.button__text'),
+              {
+                yPercent: -200,
+                duration: 1.2,
+                ease: 'Quart.easeInOut',
+              },
+              0
+            )
+            .to(
+              button.querySelector('.button__text--hover'),
+              {
+                yPercent: -200,
+                duration: 1.2,
+                ease: 'Quart.easeInOut',
+              },
+              0
+            )
+
+          button.addEventListener('mouseenter', () => {
+            btnTl.play()
+          })
+          button.addEventListener('mouseleave', () => {
+            btnTl.reverse()
+          })
+        })
+      }
+
       // Toggle header visibility
       // const header = document.querySelector('.navbar')
 
