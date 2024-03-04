@@ -27,7 +27,7 @@ export default function homeFooter() {
       resizeCanvas()
 
       const frameCount = 80
-      const currentFrame = (index) => `https://image-sequence-darwin.netlify.app/footer/${(index + 1).toString().padStart(4, '0')}jpg`
+      const currentFrame = (index) => `https://image-sequence-darwin.netlify.app/footer/${(index + 1).toString().padStart(3, '0')}jpg`
 
       const images = []
       const airpods = { frame: 0 }
